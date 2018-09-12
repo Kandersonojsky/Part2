@@ -20,11 +20,11 @@ request = pc.makeRequestRSpec()
 # Add a XenVM PC to the request.
 node = request.XenVM("node")
 
-# Create public IP Interface
-node.routable_control_ip = True
-
 #Centos 7 image
-node.addService(pg.Install(urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD))
+node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD" 
+
+# Create public IP Interface
+node.routable_control_ip = "true"
 
 # Install and execute a script that is contained in the repository.
 node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
