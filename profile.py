@@ -24,7 +24,7 @@ node = request.XenVM("node")
 node.routable_control_ip = True
 
 #Centos 7 image
-node.addService(pg.Install(url="https://www.emulab.net/image_metadata.php?uuid=6fa68fd6-9163-11e6-ac8c-90e2ba22fee4", path="/local"))
+node.addService(pg.Install(urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD))
 
 # Install and execute a script that is contained in the repository.
 node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
