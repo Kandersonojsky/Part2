@@ -21,7 +21,7 @@ request = pc.makeRequestRSpec()
 node = request.XenVM("node")
 
 # Create public IP Interface
-node.routable_control_ip = true
+node.routable_control_ip = True
 
 #Centos 7 image
 node.addService(pg.Install(url="https://www.emulab.net/image_metadata.php?uuid=6fa68fd6-9163-11e6-ac8c-90e2ba22fee4", path="/local"))
