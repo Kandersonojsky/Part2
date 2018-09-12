@@ -17,8 +17,14 @@ pc = portal.Context()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
  
-# Add a raw PC to the request.
-node = request.RawPC("node")
+# Add a XenVM PC to the request.
+node = request.XenVM("node")
+
+# Create public IP Interface
+node.routable_control_ip = true
+
+#Centos 7 image
+node.addService(pg.Install(url="https://www.emulab.net/image_metadata.php?uuid=6fa68fd6-9163-11e6-ac8c-90e2ba22fee4", path="/local"))
 
 # Install and execute a script that is contained in the repository.
 node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
