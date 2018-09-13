@@ -19,7 +19,7 @@ for x in range(1, 5):
  # Add a XenVM PC to the request.
  node = request.XenVM("node-"+str(x))
  node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
- if(x == 1)
+ if(x == 1):
   node.routable_control_ip = "true"
   
  # Install and execute a script that is contained in the repository.
