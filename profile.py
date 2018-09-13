@@ -15,6 +15,8 @@ pc = portal.Context()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
 
+link = request.LAN("lan")
+
 for x in range(1, 5):
  # Add a XenVM PC to the request.
  node = request.XenVM("node-"+str(x))
@@ -29,6 +31,7 @@ for x in range(1, 5):
  iface = node.addInterface("if"+str(x))
  iface.component_id = "eth"+str(x)
  iface.addAddress(pg.IPv4Address("192.168.1."+str(x), "255.255.255.0"))
+ link.addInterface(iface)
  
  
 # Print the RSpec to the enclosing page.
