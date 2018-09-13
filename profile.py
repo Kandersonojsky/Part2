@@ -16,7 +16,7 @@ pc = portal.Context()
 request = pc.makeRequestRSpec()
  
 # Add a XenVM PC to the request.
-node1 = request.XenVM("node")
+node1 = request.XenVM("node1")
 node1.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 node1.routable_control_ip = "true"
 
@@ -29,7 +29,7 @@ iface1.component_id = "eth1"
 iface1.addAddress(pg.IPv4Address("192.168.1.1", "255.255.255.0"))
 
 # Add a XenVM PC to the request.
-node2 = request.XenVM("node")
+node2 = request.XenVM("node2")
 node2.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 
 # Install and execute a script that is contained in the repository.
@@ -41,7 +41,7 @@ iface2.component_id = "eth2"
 iface2.addAddress(pg.IPv4Address("192.168.1.2", "255.255.255.0"))
 
 # Add a XenVM PC to the request.
-node3 = request.XenVM("node")
+node3 = request.XenVM("node3")
 node3.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 
 # Install and execute a script that is contained in the repository.
@@ -53,7 +53,7 @@ iface3.component_id = "eth3"
 iface3.addAddress(pg.IPv4Address("192.168.1.3", "255.255.255.0"))
 
 # Add a XenVM PC to the request.
-node4 = request.XenVM("node")
+node4 = request.XenVM("node4")
 node4.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 
 # Install and execute a script that is contained in the repository.
